@@ -15,8 +15,18 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+
     <build>
         <plugins>
+            <plugin>
+                <!--Constraint a memory usage to 7mb-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <meminitial>7m</meminitial>
+                    <maxmem>7m</maxmem>
+                </configuration>
+            </plugin>
             <plugin>
                 <!-- Build an executable JAR -->
                 <groupId>org.apache.maven.plugins</groupId>
